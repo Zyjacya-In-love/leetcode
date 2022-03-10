@@ -1,5 +1,10 @@
 import java.util.Arrays;
 
+/**
+ * 错题记录
+ * 1. 剑指 Offer 04. 二维数组中的查找 2022.3.10
+ */
+
 class Main {
     public static void main(String[] args) {
         // Create a new Solution instance
@@ -23,5 +28,9 @@ class Main {
         // Print the answer
         System.out.println("answer : " + Arrays.toString(answer));
 
+//        System.out.println(Integer.MAX_VALUE);
+//        System.out.println(array[0]);
+
     }
+//    static Object[] array = new Object[700000000];
 }
