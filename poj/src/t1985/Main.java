@@ -6,6 +6,8 @@ import java.util.List;
 import java.util.Scanner;
 
 /**
+ * POJ 1985 Cow Marathon
+ * http://poj.org/problem?id=1985
  * @author xzq
  * @create 2022-03-16-8:44
  */
