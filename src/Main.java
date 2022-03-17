@@ -8,7 +8,7 @@ import java.util.Arrays;
 class Main {
     public static void main(String[] args) {
         // Create a new Solution instance
-        t2044.Solution solution = new t2044.Solution();
+        t720.Solution solution = new t720.Solution();
 //        SwordPointing2OfferⅡ sp2o = new SwordPointing2OfferⅡ();
         // Create a test case
 //        String testCase = "/home/";
@@ -23,7 +23,9 @@ class Main {
 //        int[] answer = solution.platesBetweenCandles(s, queries);
 //        int answer = solution.translateNum(506);
         int[] nums = {3,2,1,5};
-        int answer = solution.countMaxOrSubsets(nums);
+        String[] words = {"m","mo","moc","moch","mocha","l","la","lat","latt","latte","c","ca","cat"};
+//        int answer = solution.countMaxOrSubsets(nums);
+        String answer = solution.longestWord(words);
 ////        int answer = solution.threeSumClosest(nums, target);
 //        String beginWord = "leet", endWord = "code";
 //        List<String> wordList = new ArrayList<>(Arrays.asList("lest","leet","lose","code","lode","robe","lost"));
