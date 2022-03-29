@@ -1,4 +1,4 @@
-package lcof57;
+package lcof57.t1;
 
 /**
  * 剑指 Offer 57. 和为s的两个数字
