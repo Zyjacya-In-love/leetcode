@@ -47,6 +47,10 @@ class Main {
 //        System.out.println(Integer.MAX_VALUE);
 //        System.out.println(array[0]);
 
+//        String t = "1,2,2,3,";
+//        String[] split = t.split(",");
+//        System.out.println(Arrays.toString(split));
+
     }
 //    static Object[] array = new Object[700000000];
 }
