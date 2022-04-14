@@ -20,7 +20,7 @@ import java.util.Arrays;
 class Main {
     public static void main(String[] args) {
         // Create a new Solution instance
-        lcof43.Solution solution = new lcof43.Solution();
+        t1864.Solution solution = new t1864.Solution();
 //        SwordPointing2OfferⅡ sp2o = new SwordPointing2OfferⅡ();
         // Create a test case
 //        String testCase = "/home/";
@@ -38,10 +38,10 @@ class Main {
         String[] words = {"m","mo","moc","moch","mocha","l","la","lat","latt","latte","c","ca","cat"};
 //        int answer = solution.countMaxOrSubsets(nums);
 //        String answer = solution.longestWord(words);
-        String s = "    .1  ";
+        String s = "100";
 //        Boolean answer = solution.isNumber(s);
         int num = 13;
-        int answer = solution.countDigitOne(num);
+        int answer = solution.minSwaps(s);
 ////        int answer = solution.threeSumClosest(nums, target);
 //        String beginWord = "leet", endWord = "code";
 //        List<String> wordList = new ArrayList<>(Arrays.asList("lest","leet","lose","code","lode","robe","lost"));
