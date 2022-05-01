@@ -28,29 +28,56 @@ import java.util.Arrays;
 //    }
 //}
 // O(nlogn) 贪心+二分
+//class Solution {
+//    public int lengthOfLIS(int[] nums) {
+//        int n = nums.length;
+//        if (n == 0) {
+//            return 0;
+//        }
+//        int len = 1;
+//        int[] dp = new int[n+1];
+//        dp[len] = nums[0];
+//        for (int i = 1; i < n; i++) {
+//            if (nums[i] > dp[len]) {
+//                dp[++len] = nums[i];
+//            } else {
+//                int s = 1, t = len+1;
+//                while (s < t) {
+//                    int m = (s+t) >> 1;
+//                    if (dp[m] >= nums[i]) {
+//                        t = m;
+//                    } else {
+//                        s = m+1;
+//                    }
+//                }
+//                dp[s] = nums[i];
+//            }
+//        }
+//        return len;
+//    }
+//}
+
+
+// 2022-04-29-22:17
 class Solution {
     public int lengthOfLIS(int[] nums) {
         int n = nums.length;
-        if (n == 0) {
-            return 0;
-        }
-        int len = 1;
-        int[] dp = new int[n+1];
-        dp[len] = nums[0];
-        for (int i = 1; i < n; i++) {
-            if (nums[i] > dp[len]) {
-                dp[++len] = nums[i];
+        int[] dp = new int[n];
+        int len = 0;
+        for (int num : nums) {
+            if (len == 0 || num > dp[len - 1]) {
+                dp[len++] = num;
             } else {
-                int s = 1, t = len+1;
+                int s = 0, t = len;
                 while (s < t) {
-                    int m = (s+t) >> 1;
-                    if (dp[m] >= nums[i]) {
+                    int m = ((s + t) >> 1);
+                    if (dp[m] >= num) {
                         t = m;
                     } else {
-                        s = m+1;
+                        s = m + 1;
                     }
                 }
-                dp[s] = nums[i];
+                dp[s] = num;
             }
         }
         return len;
