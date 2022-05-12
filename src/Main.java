@@ -12,7 +12,7 @@ class Main {
 //        String testCase = "/home/";
 //        String s = "**|**|****";
 //        String s = "***|**|*****|**||**|*";
-        int[][] queries = {{2,5}, {9,9}};
+        int[][] queries = {{2, 5}, {9, 9}};
 //        int[][] queries = {{1,17},{4,5},{14,17},{5,11},{15,16}};
 //        int[] nums = {0,0,0};
 //        int target = 1;
@@ -20,8 +20,8 @@ class Main {
 //        String answer = solution.simplifyPath(testCase);
 //        int[] answer = solution.platesBetweenCandles(s, queries);
 //        int answer = solution.translateNum(506);
-        int[] nums = {-1,0,1,2,-1,-4};
-        String[] words = {"m","mo","moc","moch","mocha","l","la","lat","latt","latte","c","ca","cat"};
+        int[] nums = {-1, 0, 1, 2, -1, -4};
+        String[] words = {"m", "mo", "moc", "moch", "mocha", "l", "la", "lat", "latt", "latte", "c", "ca", "cat"};
 //        int answer = solution.countMaxOrSubsets(nums);
 //        String answer = solution.longestWord(words);
         String s = "100";
