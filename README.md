@@ -24,6 +24,12 @@
 
 
 
+## 日志
+
+[刷题 log](./CodingNote.md)
+
+
+
 ## 错题
 
 [一轮错题集](./src/error1.txt)
