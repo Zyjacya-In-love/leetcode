@@ -24,10 +24,11 @@
 
 
 
-## 日志
+## 日志/总结
 
 [刷题 log](./CodingNote.md)
 
+[题型总结](./TypeNote.md)
 
 
 ## 错题

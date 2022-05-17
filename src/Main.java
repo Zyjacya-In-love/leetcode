@@ -1,10 +1,19 @@
 import t1864.Solution;
+import t707.MyLinkedList;
 
 import java.util.Arrays;
 import java.util.List;
 
 class Main {
     public static void main(String[] args) {
+        t707.MyLinkedList linkedList = new t707.MyLinkedList();
+        linkedList.addAtHead(1);
+        linkedList.addAtTail(3);
+        linkedList.addAtIndex(1,2);   //链表变为1-> 2-> 3
+        linkedList.get(1);            //返回2
+        linkedList.deleteAtIndex(1);  //现在链表是1-> 3
+        linkedList.get(1);            //返回3
+
         // Create a new Solution instance
         t35.Solution solution = new t35.Solution();
 //        SwordPointing2OfferⅡ sp2o = new SwordPointing2OfferⅡ();
@@ -28,14 +37,14 @@ class Main {
 //        Boolean answer = solution.isNumber(s);
         int num = 13;
         int target = 7;
-        int answer = solution.searchInsert(nums, target);
+//        int answer = solution.searchInsert(nums, target);
 ////        int answer = solution.threeSumClosest(nums, target);
 //        String beginWord = "leet", endWord = "code";
 //        List<String> wordList = new ArrayList<>(Arrays.asList("lest","leet","lose","code","lode","robe","lost"));
 //        int answer = sp2o.ladderLength(beginWord, endWord, wordList);
         // Print the answer
 //        System.out.println("answer : " + Arrays.toString(answer));
-        System.out.println(answer);
+//        System.out.println(answer);
 //        System.out.println(Integer.MAX_VALUE);
 //        System.out.println(array[0]);
 
