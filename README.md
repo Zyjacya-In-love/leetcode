@@ -26,7 +26,7 @@
 
 ## 日志/总结
 
-[刷题 log](./CodingNote.md)
+[刷题 log](./CodingLog.md)
 
 [题型总结](./TypeNote.md)
 
