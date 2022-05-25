@@ -24,27 +24,42 @@ class TreeNode {
         this.right = right;
     }
 }
+//      迭代
+//class Solution {
+//    public int maxDepth(TreeNode root) {
+//        Deque<TreeNode> queue = new LinkedList<>();
+//        if (root != null) {
+//            queue.offer(root);
+//        }
+//        int depth = 0;
+//        while (!queue.isEmpty()) {
+//            int size = queue.size();
+//            for (int i = 0; i < size; i++) {
+//                TreeNode curr = queue.poll();
+//                if (curr.left != null) {
+//                    queue.offer(curr.left);
+//                }
+//                if (curr.right != null) {
+//                    queue.offer(curr.right);
+//                }
+//            }
+//            depth++;
+//        }
+//        return depth;
+//    }
+//}
+// 通过   1 ms	41.1 MB
+
+/*
+ * @create 2022-05-25-8:55
+ */
+//      递归 后序遍历
 class Solution {
     public int maxDepth(TreeNode root) {
-        Deque<TreeNode> queue = new LinkedList<>();
-        if (root != null) {
-            queue.offer(root);
+        if (root == null) {
+            return 0;
         }
-        int depth = 0;
-        while (!queue.isEmpty()) {
-            int size = queue.size();
-            for (int i = 0; i < size; i++) {
-                TreeNode curr = queue.poll();
-                if (curr.left != null) {
-                    queue.offer(curr.left);
-                }
-                if (curr.right != null) {
-                    queue.offer(curr.right);
-                }
-            }
-            depth++;
-        }
-        return depth;
+        return Math.max(maxDepth(root.left), maxDepth(root.right)) + 1;
     }
 }
-// 通过   1 ms	41.1 MB
+// 通过   0 ms	41.3 MB
