@@ -1,6 +1,5 @@
 package t222;
 
-import sun.misc.ObjectInputFilter;
 
 /**
  * 222. 完全二叉树的节点个数
@@ -48,41 +47,70 @@ class TreeNode {
 // 通过   0 ms	43.8 MB
 
 // leetcode 官解 二分+位运算
+//class Solution {
+//    public int countNodes(TreeNode root) {
+//        if (root == null) {
+//            return 0;
+//        }
+//        int level = 0;
+//        TreeNode node = root;
+//        while (node.left != null) {
+//            level++;
+//            node = node.left;
+//        }
+//        // 找到第一个不存在的节点标号（标号从1开始，到 2^(h+1)-1 结束，h是层数，从0开始）
+//        int low = 1 << level, high = (1 << (level + 1));
+//        while (low < high) {
+//            int mid = (high - low) / 2 + low;
+//            if (exists(root, level, mid)) {
+//                low = mid+1;
+//            } else {
+//                high = mid;
+//            }
+//        }
+//        return low-1;
+//    }
+//
+//    public boolean exists(TreeNode root, int level, int k) {
+//        int bits = 1 << (level - 1);
+//        TreeNode node = root;
+//        while (node != null && bits > 0) {
+//            if ((bits & k) == 0) {
+//                node = node.left;
+//            } else {
+//                node = node.right;
+//            }
+//            bits >>= 1;
+//        }
+//        return node != null;
+//    }
+//}
+
+
+/*
+ * @create 2022-05-26-22:48
+ */
 class Solution {
     public int countNodes(TreeNode root) {
         if (root == null) {
             return 0;
         }
-        int level = 0;
-        TreeNode node = root;
-        while (node.left != null) {
-            level++;
-            node = node.left;
+        int leftHeight = 0;
+        TreeNode left = root.left;
+        while (left != null) {
+            leftHeight++;
+            left = left.left;
         }
-        // 找到第一个不存在的节点标号（标号从1开始，到 2^(h+1)-1 结束，h是层数，从0开始）
-        int low = 1 << level, high = (1 << (level + 1));
-        while (low < high) {
-            int mid = (high - low) / 2 + low;
-            if (exists(root, level, mid)) {
-                low = mid+1;
-            } else {
-                high = mid;
-            }
+        int rightHeight = 0;
+        TreeNode right = root.right;
+        while (right != null) {
+            rightHeight++;
+            right = right.right;
         }
-        return low-1;
-    }
-
-    public boolean exists(TreeNode root, int level, int k) {
-        int bits = 1 << (level - 1);
-        TreeNode node = root;
-        while (node != null && bits > 0) {
-            if ((bits & k) == 0) {
-                node = node.left;
-            } else {
-                node = node.right;
-            }
-            bits >>= 1;
+        if (leftHeight == rightHeight) {
+            return (int) (Math.pow(2, leftHeight+1)-1);
         }
-        return node != null;
+        return countNodes(root.left) + countNodes(root.right) + 1;
     }
 }
+// 通过   0 ms	44 MB
