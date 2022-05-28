@@ -21,15 +21,36 @@ class TreeNode {
         this.right = right;
     }
 }
+//      递归
+//class Solution {
+//    public TreeNode searchBST(TreeNode root, int val) {
+//        if (root == null || root.val == val) {
+//            return root;
+//        }
+//        if (val < root.val) {
+//            return searchBST(root.left, val);
+//        }
+//        return searchBST(root.right, val);
+//    }
+//}
+// 通过   0 ms	41.6 MB
+
+/*
+ * @create 2022-05-28-13:05
+ */
+//      迭代
 class Solution {
     public TreeNode searchBST(TreeNode root, int val) {
-        if (root == null || root.val == val) {
-            return root;
+        while (root != null) {
+            if (root.val == val) {
+                return root;
+            } else if (val < root.val){
+                root = root.left;
+            } else {
+                root = root.right;
+            }
         }
-        if (val < root.val) {
-            return searchBST(root.left, val);
-        }
-        return searchBST(root.right, val);
+        return root;
     }
 }
 // 通过   0 ms	41.6 MB

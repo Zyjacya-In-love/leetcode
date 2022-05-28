@@ -15,12 +15,31 @@ class TreeNode {
     TreeNode right;
     TreeNode(int x) { val = x; }
 }
+//class Solution {
+//    public TreeNode lowestCommonAncestor(TreeNode root, TreeNode p, TreeNode q) {
+//        if (root == null) {
+//            return null;
+//        }
+//        if (root == p || root == q) {
+//            return root;
+//        }
+//        TreeNode left = lowestCommonAncestor(root.left, p, q);
+//        TreeNode right = lowestCommonAncestor(root.right, p, q);
+//        if (left != null && right != null) {
+//            return root;
+//        }
+//        return left == null ? right : left;
+//    }
+//}
+// 通过   6 ms	42.9 MB
+
+
+/*
+ * @create 2022-05-28-21:16
+ */
 class Solution {
     public TreeNode lowestCommonAncestor(TreeNode root, TreeNode p, TreeNode q) {
-        if (root == null) {
-            return null;
-        }
-        if (root == p || root == q) {
+        if (root == null || root == p || root == q) {
             return root;
         }
         TreeNode left = lowestCommonAncestor(root.left, p, q);
@@ -31,4 +50,4 @@ class Solution {
         return left == null ? right : left;
     }
 }
-// 通过   6 ms	42.9 MB
+// 通过   6 ms	42.4 MB

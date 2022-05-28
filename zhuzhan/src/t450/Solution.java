@@ -64,36 +64,68 @@ class TreeNode {
 // 通过   0 ms	41.4 MB
 
 // 只有一个删除方法
+//class Solution {
+//    public TreeNode deleteNode(TreeNode root, int key) {
+//        if (root == null) {
+//            return null;
+//        }
+//        if (root.val == key) {
+//            if (root.left == null) return root.right;
+//            if (root.right == null) return root.left;
+//            TreeNode leftMaxNode = getMaxNode(root.left);
+//            leftMaxNode.left = deleteNode(root.left, leftMaxNode.val);
+//            leftMaxNode.right = root.right;
+//            return leftMaxNode;
+//        }
+//        if (key < root.val) {
+//            root.left = deleteNode(root.left, key);
+//        }
+//        if (key > root.val) {
+//            root.right = deleteNode(root.right, key);
+//        }
+//        return root;
+//    }
+//
+//    private TreeNode getMaxNode(TreeNode root) {
+//        if (root == null) {
+//            return null;
+//        }
+//        while (root.right != null) {
+//            root = root.right;
+//        }
+//        return root;
+//    }
+//}
+// 通过   0 ms	41.5 MB
+
+
+/*
+ * @create 2022-05-28-22:39
+ */
 class Solution {
     public TreeNode deleteNode(TreeNode root, int key) {
         if (root == null) {
             return null;
         }
         if (root.val == key) {
-            if (root.left == null) return root.right;
-            if (root.right == null) return root.left;
-            TreeNode leftMaxNode = getMaxNode(root.left);
-            leftMaxNode.left = deleteNode(root.left, leftMaxNode.val);
-            leftMaxNode.right = root.right;
-            return leftMaxNode;
-        }
-        if (key < root.val) {
+            if (root.left == null) {
+                return root.right;
+            }
+            if (root.right == null) {
+                return root.left;
+            }
+            TreeNode curr = root.right;
+            while (curr.left != null) {
+                curr = curr.left;
+            }
+            curr.left = root.left;
+            return root.right;
+        } else if (root.val > key) {
             root.left = deleteNode(root.left, key);
-        }
-        if (key > root.val) {
+        } else {
             root.right = deleteNode(root.right, key);
         }
         return root;
     }
-
-    private TreeNode getMaxNode(TreeNode root) {
-        if (root == null) {
-            return null;
-        }
-        while (root.right != null) {
-            root = root.right;
-        }
-        return root;
-    }
 }
-// 通过   0 ms	41.5 MB
+// 通过   0 ms	41.6 MB
