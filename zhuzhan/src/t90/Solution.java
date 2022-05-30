@@ -11,28 +11,59 @@ import java.util.List;
  * @author xzq
  * @create 2022-05-04-15:29
  */
+//class Solution {
+//    private LinkedList<Integer> track;
+//    private List<List<Integer>> res;
+//
+//    public List<List<Integer>> subsetsWithDup(int[] nums) {
+//        track = new LinkedList<>();
+//        res = new ArrayList<>();
+//        Arrays.sort(nums);
+//        backtrack(nums, 0);
+//        return res;
+//    }
+//
+//    private void backtrack(int[] nums, int start) {
+//        res.add(new ArrayList<>(track));
+//        for (int i = start; i < nums.length; i++) {
+//            if (i > start && nums[i] == nums[i-1]) {
+//                continue;
+//            }
+//            track.add(nums[i]);
+//            backtrack(nums, i+1);
+//            track.removeLast();
+//        }
+//    }
+//}
+// 通过   1 ms	41.7 MB
+
+
+/*
+ * @create 2022-05-30-18:07
+ */
 class Solution {
-    private LinkedList<Integer> track;
+
+    private LinkedList<Integer> path;
     private List<List<Integer>> res;
 
     public List<List<Integer>> subsetsWithDup(int[] nums) {
-        track = new LinkedList<>();
+        path = new LinkedList<>();
         res = new ArrayList<>();
         Arrays.sort(nums);
         backtrack(nums, 0);
         return res;
     }
 
-    private void backtrack(int[] nums, int start) {
-        res.add(new ArrayList<>(track));
-        for (int i = start; i < nums.length; i++) {
-            if (i > start && nums[i] == nums[i-1]) {
+    private void backtrack(int[] nums, int startIndex) {
+        res.add(new ArrayList<>(path));
+        for (int i = startIndex; i < nums.length; i++) {
+            if (i > startIndex && nums[i] == nums[i-1]) {
                 continue;
             }
-            track.add(nums[i]);
+            path.addLast(nums[i]);
             backtrack(nums, i+1);
-            track.removeLast();
+            path.removeLast();
         }
     }
 }
-// 通过   1 ms	41.7 MB
+// 通过   1 ms	41.8 MB
