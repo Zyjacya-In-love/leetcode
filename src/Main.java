@@ -6,16 +6,19 @@ import java.util.List;
 
 class Main {
     public static void main(String[] args) {
-        t707.MyLinkedList linkedList = new t707.MyLinkedList();
-        linkedList.addAtHead(1);
-        linkedList.addAtTail(3);
-        linkedList.addAtIndex(1,2);   //链表变为1-> 2-> 3
-        linkedList.get(1);            //返回2
-        linkedList.deleteAtIndex(1);  //现在链表是1-> 3
-        linkedList.get(1);            //返回3
+//        t707.MyLinkedList linkedList = new t707.MyLinkedList();
+//        linkedList.addAtHead(1);
+//        linkedList.addAtTail(3);
+//        linkedList.addAtIndex(1,2);   //链表变为1-> 2-> 3
+//        linkedList.get(1);            //返回2
+//        linkedList.deleteAtIndex(1);  //现在链表是1-> 3
+//        linkedList.get(1);            //返回3
 
         // Create a new Solution instance
-        t35.Solution solution = new t35.Solution();
+//        t37.Solution solution = new t37.Solution();
+//        char[][] board = {{'5','3','.','.','7','.','.','.','.'},{'6','.','.','1','9','5','.','.','.'},{'.','9','8','.','.','.','.','6','.'},{'8','.','.','.','6','.','.','.','3'},{'4','.','.','8','.','3','.','.','1'},{'7','.','.','.','2','.','.','.','6'},{'.','6','.','.','.','.','2','8','.'},{'.','.','.','4','1','9','.','.','5'},{'.','.','.','.','8','.','.','7','9'}};
+//        solution.solveSudoku(board);
+//        System.out.println(Arrays.deepToString(board));
 //        SwordPointing2OfferⅡ sp2o = new SwordPointing2OfferⅡ();
         // Create a test case
 //        String testCase = "/home/";
