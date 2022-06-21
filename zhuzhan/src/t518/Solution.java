@@ -70,21 +70,36 @@ import java.util.Arrays;
 /*
  * @create 2022-06-21-23:44
  */
+//class Solution {
+//    public int change(int amount, int[] coins) {
+//        int[][] dp = new int[coins.length+1][amount+1];
+//        for (int i = 0; i <= coins.length; i++) {
+//            dp[i][0] = 1;
+//        }
+//        for (int i = 1; i <= coins.length; i++) {
+//            for (int j = 1; j <= amount; j++) {
+//                dp[i][j] = dp[i-1][j];
+//                if (j-coins[i-1] >= 0) {
+//                    dp[i][j] += dp[i][j-coins[i-1]];
+//                }
+//            }
+//        }
+//        return dp[coins.length][amount];
+//    }
+//}
+// 通过   5 ms	47.8 MB
+
+// 滚动数组
 class Solution {
     public int change(int amount, int[] coins) {
-        int[][] dp = new int[coins.length+1][amount+1];
-        for (int i = 0; i <= coins.length; i++) {
-            dp[i][0] = 1;
-        }
-        for (int i = 1; i <= coins.length; i++) {
-            for (int j = 1; j <= amount; j++) {
-                dp[i][j] = dp[i-1][j];
-                if (j-coins[i-1] >= 0) {
-                    dp[i][j] += dp[i][j-coins[i-1]];
-                }
+        int[] dp = new int[amount+1];
+        dp[0] = 1;
+        for (int i = 0; i < coins.length; i++) {
+            for (int j = coins[i]; j <= amount; j++) {
+                dp[j] += dp[j-coins[i]];
             }
         }
-        return dp[coins.length][amount];
+        return dp[amount];
     }
 }
-// 通过   5 ms	47.8 MB
+// 通过   2 ms	39 MB
