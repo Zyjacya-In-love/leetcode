@@ -58,28 +58,59 @@ import java.util.Arrays;
 //}
 
 
-// 2022-04-29-22:17
+//// 2022-04-29-22:17
+//class Solution {
+//    public int lengthOfLIS(int[] nums) {
+//        int n = nums.length;
+//        int[] dp = new int[n];
+//        int len = 0;
+//        for (int num : nums) {
+//            if (len == 0 || num > dp[len - 1]) {
+//                dp[len++] = num;
+//            } else {
+//                int s = 0, t = len;
+//                while (s < t) {
+//                    int m = ((s + t) >> 1);
+//                    if (dp[m] >= num) {
+//                        t = m;
+//                    } else {
+//                        s = m + 1;
+//                    }
+//                }
+//                dp[s] = num;
+//            }
+//        }
+//        return len;
+//    }
+//}
+
+
+/*
+ * @create 2022-07-04-20:13
+ */
+// 定义：dp[i] 长度为 i 的递增子序列的第 i 个元素的最小值
+// 状态转移：从前向后遍历，对于每个元素，在dp中找到第一个大于等于它的元素（假设索引为idx），替换 dp[idx] 这个元素，
+//          即可以以这个元素为结尾构造出一个当前索引这么长的严格递增子序列（如 dp[1:idx]）
+// 初始化：不用初始化
+// 遍历顺序：先正序 nums 再正序 dp
 class Solution {
     public int lengthOfLIS(int[] nums) {
         int n = nums.length;
-        int[] dp = new int[n];
+        int[] dp = new int[n+1];
         int len = 0;
-        for (int num : nums) {
-            if (len == 0 || num > dp[len - 1]) {
-                dp[len++] = num;
-            } else {
-                int s = 0, t = len;
-                while (s < t) {
-                    int m = ((s + t) >> 1);
-                    if (dp[m] >= num) {
-                        t = m;
-                    } else {
-                        s = m + 1;
-                    }
+        for (int i = 0; i < n; i++) {
+            int j = 1;
+            for (; j <= len; j++) {
+                if (dp[j] >= nums[i]) {
+                    dp[j] = nums[i];
+                    break;
                 }
-                dp[s] = num;
+            }
+            if (j > len) {
+                dp[++len] = nums[i];
             }
         }
         return len;
     }
 }
+// 通过   7 ms	41.2 MB
