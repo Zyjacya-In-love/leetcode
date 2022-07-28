@@ -39,22 +39,26 @@ class Solution {
             return 0;
         });
         // 错 2. 次：前导 0，没去除，eg：[0,0]
-        int pos = 0;
-        for (int i = 0; i < res.size(); i++) {
-            if ("0".equals(res.get(i))) {
-                pos++;
-            } else {
-                break;
-            }
-        }
-        if (pos == res.size()) { // 错 3. 次：结果就是 0，eg：[0]
+//        int pos = 0;
+//        for (int i = 0; i < res.size(); i++) {
+//            if ("0".equals(res.get(i))) {
+//                pos++;
+//            } else {
+//                break;
+//            }
+//        }
+//        if (pos == res.size()) { // 错 3. 次：结果就是 0，eg：[0]
+//            return "0";
+//        }
+        // 我是 sb，如果第一个是 "0"，那必然就是 0，因为任何数都比 0 大，肯定在 0 前面，所以只需要判断第一个是不是 "0"
+        if ("0".equals(res.get(0))) {
             return "0";
         }
         StringBuilder sb = new StringBuilder();
-        for (int i = pos; i < res.size(); ++i) {
+        for (int i = 0; i < res.size(); ++i) {
             sb.append(res.get(i));
         }
         return sb.toString();
     }
 }
-// 通过   4 ms	41.2 MB
+// 通过   4 ms	40.8 MB
