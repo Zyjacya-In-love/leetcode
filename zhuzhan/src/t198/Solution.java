@@ -42,9 +42,30 @@ package t198;
  */
 // dp[i] = max(dp[i-1], dp[i-2]+robs[i]);
 // 把 dp[0] 空出来为 0，这样只需要赋值 dp[1] 为 nums[0] 非常巧妙
+//class Solution {
+//    public int rob(int[] nums) {
+//        int n = nums.length;
+//        int[] dp = new int[n+1];
+//        dp[1] = nums[0];
+//        for (int i = 2; i <= n; i++) {
+//            dp[i] = Math.max(dp[i-1], dp[i-2]+nums[i-1]);
+//        }
+//        return dp[n];
+//    }
+//}
+// 通过   0 ms	38.8 MB
+
+
+/*
+ * @from my unity exam 1006 1t
+ * @create 2022-10-06-19:00
+ */
 class Solution {
-    public int rob(int[] nums) {
+    public int rob (int[] nums) {
         int n = nums.length;
+        if (n == 1) {
+            return nums[0];
+        }
         int[] dp = new int[n+1];
         dp[1] = nums[0];
         for (int i = 2; i <= n; i++) {
@@ -53,4 +74,4 @@ class Solution {
         return dp[n];
     }
 }
-// 通过   0 ms	38.8 MB
+// 通过   0 ms	39.2 MB
