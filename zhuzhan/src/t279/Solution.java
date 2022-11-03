@@ -1,7 +1,7 @@
 package t279;
 
 
-import org.junit.jupiter.api.Test;
+//import org.junit.jupiter.api.Test;
 
 import java.util.Arrays;
 
@@ -27,14 +27,14 @@ class Solution {
 }
 // 通过   45 ms	40.4 MB
 
-class SquareTest {
-    @Test
-    void test() {
-        int cnt = 0;
-        for (int i = 0; i*i <= 10000; i++) {
-            System.out.println(i*i);
-            cnt++;
-        }
-        System.out.println("cnt : " + cnt);
-    }
-}
+//class SquareTest {
+//    @Test
+//    void test() {
+//        int cnt = 0;
+//        for (int i = 0; i*i <= 10000; i++) {
+//            System.out.println(i*i);
+//            cnt++;
+//        }
+//        System.out.println("cnt : " + cnt);
+//    }
+//}

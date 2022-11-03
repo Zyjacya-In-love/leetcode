@@ -1,7 +1,5 @@
 package t36;
 
-import jdk.nashorn.internal.ir.IfNode;
-
 /**
  * 36. 有效的数独
  * https://leetcode.cn/problems/valid-sudoku/

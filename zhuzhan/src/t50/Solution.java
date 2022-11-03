@@ -1,7 +1,5 @@
 package t50;
 
-import org.omg.PortableInterceptor.INACTIVE;
-
 /**
  * 50. Pow(x, n)
  * https://leetcode.cn/problems/powx-n/
